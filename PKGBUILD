@@ -7,12 +7,16 @@ arch=('x86_64')
 url='https://github.com/daklaus/kubectl-vsphere'
 license=('Apache')
 depends=('kubectl')
-#makedepends=('git')
+makedepends=('unzip' 'coreutils')
 groups=('kubectl-plugins')
-source=("kubectl-vsphere")
-sha512sums=('7af7c5b612ac3be8401c4f09301d785426bcb61b15cd3c8e93f92c5d21a6cd0e6422761e9f0f425c474c8b6a2b94b2a2b9d4444379748eced55abbfdacfcc8d6')
-b2sums=('5306afad6f622c2eccf5aacb31415bf3c219d2eae73ec2bae7e985f928f9c93ae74a8fd23536045a24e9ea0deff854175e191dd899ffb2dc48771f7536a5bb0c')
+source=("vsphere-plugin.zip" "sha256sum.txt")
+sha256sums=('SKIP' 'SKIP')
+noextract=("vsphere-plugin.zip")
 
+prepare() {
+  shasum --algorithm 256 --check sha256sum.txt < vsphere-plugin.zip
+  unzip vsphere-plugin.zip
+}
 package() {
-  install -Dm755 kubectl-vsphere "$pkgdir"/usr/bin/kubectl-vsphere
+  install -Dm755 bin/kubectl-vsphere "$pkgdir"/usr/bin/kubectl-vsphere
 }

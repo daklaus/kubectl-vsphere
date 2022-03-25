@@ -1,4 +1,5 @@
-kubectl-vsphere
+sha256sum.txt
+vsphere-plugin.zip
 pkg/
 src/
 *.pkg.tar.zst

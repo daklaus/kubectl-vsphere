@@ -14,9 +14,11 @@ and Tanzu Kubernetes clusters using your vCenter Single Sign-On credentials.
 
 ### Installation
 
-1. Download the binaries from your vSphere cluster from the intranet site `https://<YOUR-TANZU-CLUSTER-IP>` or
-   directly with this link `https://<YOUR-TANZU-CLUSTER-IP>/wcp/plugin/linux-amd64/vsphere-plugin.zip`.
-2. Extract the zip and copy the `bin/kubectl-vsphere` binary into this directory.
+1. Download the ZIP file with the binaries and also the sha256 sums file from your vSphere cluster at `https://<YOUR-TANZU-CLUSTER-IP>` or
+   directly with the following links:
+   - `https://<YOUR-TANZU-CLUSTER-IP>/wcp/plugin/linux-amd64/vsphere-plugin.zip`
+   - `https://<YOUR-TANZU-CLUSTER-IP>/wcp/plugin/linux-amd64/sha256sum.txt`
+2. Move the two files `vsphere-plugin.zip` and `sha256sum.txt` into this directory.
 3. Run `make install` or run `makepkg -si` yourself.
 
 ## Usage

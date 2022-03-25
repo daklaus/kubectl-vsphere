@@ -1,0 +1,4 @@
+kubectl-vsphere
+pkg/
+src/
+*.pkg.tar.zst

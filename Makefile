@@ -7,4 +7,4 @@ install:
 clean:
 	rm -fr *.pkg.tar.zst pkg/ src/
 
-.PHONY: clean
+.PHONY: all build install clean
